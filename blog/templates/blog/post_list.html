@@ -3,22 +3,16 @@
 <head><title>Test Blog</title></head>
 <body>
     <header>
-        <h1>Testing a Blog format</h1>
-        <p>Welcome to the testing page. Welcome to the internet</p>
-    </header>    
-
-    <article>
-        <h1><a href="/">Post 2</a></h1>
-        <p>continuing blog ....</p>
-        <time>published: 29-10-2021 </time>
-               
-    </article>
-
-    <article>
-        <h1><a href="/">Post 1</a></h1>
-        <time>published: 29-10-2021 </time>
-        <p>Introducing blog ....</p>
+        <h1>Testing Blog</h1>
+    </header>
+    
+    {% for post in posts %}
+        <article>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <time>published: {{ post.published_date }}</time>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
+    {% endfor %}
 
 </body>
 </html>
